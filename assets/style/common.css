@@ -1,1 +1,91 @@
 @charset "UTF-8";
+
+/*Account popup*/
+.dark-background {
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgba(0, 0, 0, 0.746);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    display: grid;
+    place-content: center;
+    transition-duration: 0.5s;
+}
+
+.form-box {
+    display: grid;
+    place-content: center;
+    background-color: rgb(244, 244, 247);
+    width: 350px;
+    height: 460px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.105);
+    transform: translateY(-10px);
+    transition-duration: 0.5s;
+}
+
+.log-in-form {
+    display: grid;
+    place-items: center;
+}
+
+.log-in-form input[type=text], .log-in-form input[type=email] {
+    width: 270px;
+    height: 48px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    padding: 0 10px;
+    border: 1px solid rgba(0, 0, 0, 0.229);
+    transition-duration: 0.2s;
+}
+
+.log-in-form input[type=text]:focus, .log-in-form input[type=email]:focus {
+    border: 1px solid #69b0f8;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.log-in-form input[type=button] {
+    width: 270px;
+    height: 42px;
+    border-radius: 21px;
+    background-color: #007fff;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    transition-duration: 0.2s;
+}
+
+.log-in-form input[type=button]:hover {
+    background-color: #2892fb;
+}
+
+.log-in-form input[type=button]:active {
+    background-color: #006ad5;
+}
+
+.login {
+    transition-duration: 0.5s;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.shown {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.translateY {
+    transform: translateY(10px);
+}
+/*end Account popup*/
