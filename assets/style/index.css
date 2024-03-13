@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 :root {
-    
+    --header-height: 48px;
+    --landing-page-height: 550px
 }
 
 .container {
@@ -21,12 +22,10 @@
   
 .box {
     position: relative;
-    height: 550px;
+    height: var(--landing-page-height);
     flex: 0 0 100%;
     max-width: 100%;
     color: #fff;
-    display: grid;
-    grid-template-areas: "content";
 }
 
 .box:before {
@@ -54,7 +53,7 @@
 }
   
 .dune {background: #fff url(../media/land-dune.jpg) center / cover no-repeat;}
-.argylle {background: #fff url(../media/land-argylle.webp) center 0px / cover no-repeat;}
+.argylle {background: #fff url(../media/land-argylle.webp)  center 0px / cover no-repeat;}
 .poor-things{background: #fff url(../media/land-poor-things.jpg) center / cover no-repeat;}
 .cabrini {background: #fff url(../media/land-cabrini.jpg) center / cover no-repeat;}
 .madam-web{background: #fff url(../media/land-web.jpg) center / cover no-repeat;}
@@ -65,7 +64,7 @@
     justify-self: start; 
     align-self: end;
     margin-bottom: 10%;
-    z-index: 2;
+    z-index: 1;
 }
   
 h2 {
@@ -73,6 +72,7 @@ h2 {
     font-size: 40px;
     line-height: 30px;
     margin-bottom: 10px;
+    font-weight: 400;
 } 
 
 h3 {
@@ -84,20 +84,54 @@ h3 {
     font-weight: 600;
 }
 
+.back p:not(:first-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.493);
+}
+
 .box span {
     font-weight: 100;
 }
 
-.left, .right {
+
+.scroll-button {
     position: absolute;
     font-size: 30px;
-    top: 50%;
+    top: var(--header-height);
+    bottom: 0;
     list-style: none;
     color: #fff;
-    height: 50px;
+    background-color: transparent;
+    width: 70px;
+    height: var(--landing-page-height);
+    visibility: hidden;
+    transition: visibility 0.2s ease-in;
+}
+
+.scroll-button.visible {
+    visibility: visible;
 }
   
-.right {right: 50px;}
-.left {left: 50px;}
+.right {right: 0px;}
+.left {left: 0px;}
+
+.right:before {
+    position: absolute;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+.left:before {
+    position: absolute;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
 
 /*END-CAROUSEL-LANDING*/
