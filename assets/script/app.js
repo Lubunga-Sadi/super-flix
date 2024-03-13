@@ -24,3 +24,8 @@ darkBkg.addEventListener("click", hideCreateAccount);
 formBox.addEventListener("click", (event) => {
     event.stopPropagation();
 });
+
+// SCROLL LANDING-PAGE //
+
+
+// END SCROLL LANDING-PAGE
